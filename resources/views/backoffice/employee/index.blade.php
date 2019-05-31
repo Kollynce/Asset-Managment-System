@@ -26,8 +26,8 @@
               <td>{{$employees->email}}</td>
               <td>{{$employees->created_at->toFormattedDateString()}}</td>
               <td>
-                <button class="employee-edit btn" data-url="{{action('EmployeeController@update',$employees['id'])}}"><i class="fa fa-pencil-square-o" style="font-size:30px;color:blue" data-toggle="modal" data-target="#editModal"></i></a>
-                <button class="employee-show btn" data-url="{{action('EmployeeController@show',$employees['id'])}}"><i class="fa fa-file" style="font-size:30px;color:yallow" data-toggle="modal" data-target="#showModal"></i></button>
+                <button class="employee-edit btn" data-url="{{action('EmployeeController@update',$employees['id'])}}"><i class="fa fa-pencil-square-o" style="font-size:30px;color:blue" data-toggle="modal" data-target="#editModal"></i></button>
+                <button class="employee-show btn" data-url="{{action('EmployeeController@show',$employees['id'])}}"><i class="fa fa-file" style="font-size:30px;color:yellow" data-toggle="modal" data-target="#showModal"></i></button>
                 <i class="fa fa-trash" style="font-size:30px;color:red"></i>
               </td>
           </tr>

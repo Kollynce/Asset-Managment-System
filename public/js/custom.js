@@ -10,10 +10,10 @@ $('body').on('click', '.employee-show', function(e){
         data: JSON,
         success: function(response){
             $('#employee-name').text(response.name);
-            $('#employee-email').val(response.email);
-            $('#employee-img').val(response.image);
-            $('#employee-office-number').val(response.office_phone_number);
-            $('#employee-mobile-number').val(response.mobile_phone_number);
+            $('#employee-email').text(response.email);
+            $('#employee-img').text(response.image);
+            $('#employee-office-number').text(response.office_phone_number);
+            $('#employee-mobile-number').text(response.mobile_phone_number);
         }
     })
 
