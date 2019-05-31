@@ -117,7 +117,7 @@ class EmployeeController extends Controller
          $employee->office_phone_number = $request ->get ('office_phone_number');
          $employee->mobile_phone_number = $request ->get ('mobile_phone_number');
          $employee->save();
-         return view('backoffice.employee.index');
+         return redirect('/employee');
     }
 
     /**

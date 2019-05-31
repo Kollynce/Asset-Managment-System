@@ -9,7 +9,8 @@
             @csrf
             <div class="modal-body">
                 <div class="form-group">
-                    <input type="text" id="employee-name" name="name" class="form-control">
+                    <label id="employee-name"></label>
+                    {{-- <input type="text" id="employee-name" name="name" class="form-control"> --}}
                 </div>
                 <div class="form-group">
                     <input type="text" id="employee-email" name="email" class="form-control">
