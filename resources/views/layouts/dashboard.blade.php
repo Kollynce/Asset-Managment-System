@@ -281,7 +281,8 @@
 </div>
 <!-- END main -->
 
-<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/app.js') }}"></script>
+
 
 <script src="assets/js/modernizr.min.js"></script>
 <script src="assets/js/moment.min.js"></script>
@@ -300,7 +301,6 @@
 	<!-- Counter-Up-->
 	<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
 
 	<script>
 		$(document).ready(function() {
@@ -413,5 +413,7 @@
 	</script>
 <!-- END Java Script for this page -->
 
+	{{-- Custom script --}}
+	<script src="{{ asset('js/custom.js') }}"></script>
 </body>
 </html>

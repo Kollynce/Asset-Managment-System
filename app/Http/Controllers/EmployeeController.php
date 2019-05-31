@@ -43,7 +43,7 @@ class EmployeeController extends Controller
             'email' => 'required|email|unique:users',
             'image' => 'required|max:20',
             'office_phone_number' => 'required|max:15',
-            'mobile_phone_number' => 'required|max:15'
+            'mobile_phone_number' => 'required|max:15',
          ]);
 
         //  $employee = new Employee();
@@ -60,7 +60,8 @@ class EmployeeController extends Controller
             'email' => $request->email,
             'image' => $request->image,
             'office_phone_number' => $request->office_phone_number,
-            'mobile_phone_number' => $request->mobile_phone_number
+            'mobile_phone_number' => $request->mobile_phone_number,
+            'status' => 'default'
         );
         Employee::create($employee);
         return back();

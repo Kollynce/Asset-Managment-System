@@ -27,7 +27,7 @@
               <td>{{$employees->created_at->toFormattedDateString()}}</td>
               <td>
                 <a href="{{action('EmployeeController@edit',$employees['id'])}}"><i class="fa fa-pencil-square-o" style="font-size:30px;color:blue" data-toggle="modal" data-target="#editModal"></i></a>
-                <a class="employee-show" href="{{action('EmployeeController@show',$employees['id'])}}"><i class="fa fa-file" style="font-size:30px;color:yallow" data-toggle="modal" data-target="#editModal"></i></a>
+                <button class="employee-show" data-url="{{action('EmployeeController@show',$employees['id'])}}"><i class="fa fa-file" style="font-size:30px;color:yallow" data-toggle="modal" data-target="#showModal"></i></button>
                 <i class="fa fa-trash" style="font-size:30px;color:red"></i>
               </td>
           </tr>
@@ -37,7 +37,7 @@
   </div>
 
   @include('backoffice.employee.create')
-  @include('backoffice.employee.edit')
   @include('backoffice.employee.show')
+  @include('backoffice.employee.edit')
 
 @endsection
