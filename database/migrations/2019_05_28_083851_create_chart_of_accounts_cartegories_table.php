@@ -19,7 +19,6 @@ class CreateChartOfAccountsCartegoriesTable extends Migration
             $table->string('coa_cat_name');
             $table->integer('coa_min');
             $table->integer('coa_max');
-            $table->string('last_modified_by');
             $table->timestamps();
         });
     }

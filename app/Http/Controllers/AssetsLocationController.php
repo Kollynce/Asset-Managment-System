@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\AssetsLocation;
 class AssetsLocationController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class AssetsLocationController extends Controller
      */
     public function index()
     {
-        //
+        $location = AssetsLocation::all();
+        return view('backoffice.location.index',compact('location'));
     }
 
     /**
@@ -34,7 +35,10 @@ class AssetsLocationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $location = new AssetsLocation();
+        $location->location_name = $request->text;
+        $location->save();
+        return 'Done';
     }
 
     /**

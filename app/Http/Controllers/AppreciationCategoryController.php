@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\AppreciationCategory;
 
 class AppreciationCategoryController extends Controller
 {
@@ -13,7 +14,8 @@ class AppreciationCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $appreciation = AppreciationCategory::all();
+        return view('backoffice.appreciation.index')->with('appreciation',$appreciation);
     }
 
     /**
@@ -23,7 +25,7 @@ class AppreciationCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.appreciation.index');
     }
 
     /**

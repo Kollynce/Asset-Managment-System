@@ -17,7 +17,6 @@ class CreateDepreciationCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('depreaciate_name');
             $table->decimal('depreaciate_percentage',2);
-            $table->string('status');
             $table->timestamps();
         });
     }

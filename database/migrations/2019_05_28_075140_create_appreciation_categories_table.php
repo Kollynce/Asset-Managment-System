@@ -17,7 +17,6 @@ class CreateAppreciationCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('appreaciate_name');
             $table->decimal('appreaciate_percentage',2);
-            $table->string('status');
             $table->timestamps();
         });
     }

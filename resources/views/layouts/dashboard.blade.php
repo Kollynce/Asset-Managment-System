@@ -143,7 +143,7 @@
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Hello, admin</small> </h5>
+                                    <h5 class="text-overflow"><small>Hello, {{ Auth::user()->name }}</small> </h5>
                                 </div>
 
                                 <!-- item-->
@@ -152,14 +152,14 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
-                                    <i class="fa fa-power-off"></i> <span>Logout</span>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-power-off"></i> {{ __('Logout') }}
                                 </a>
 
-								<!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
-                                    <i class="fa fa-external-link"></i> <span>Pike Admin</span>
-                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
                             </div>
                         </li>
 

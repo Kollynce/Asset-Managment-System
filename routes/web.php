@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::group(['middleware' => 'auth'], function(){
@@ -20,11 +20,15 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('layouts.dashboard', function () {
         return view('layouts.dashboard');
     });
-    
+
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('/employee','EmployeeController');
+Route::resource('/location','AssetsLocationController');
+Route::resource('/assetsItems','AssetsItemController');
+Route::resource('/coa','ChartOfAccountController');
+Route::resource('/coacat','ChartOfAccountsCartegoryController');
+Route::resource('/appreciation','AppreciationCategoryController');
+Route::resource('/depreciation','DepreciationCategoryController');

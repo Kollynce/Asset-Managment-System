@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\DepreciationCategory;
 class DepreciationCategoryController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class DepreciationCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $depreciation = DepreciationCategory::all();
+        return view('backoffice.depreciation.index')->with('depreciation',$depreciation);
     }
 
     /**
@@ -23,7 +24,7 @@ class DepreciationCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.depreciation.index');
     }
 
     /**

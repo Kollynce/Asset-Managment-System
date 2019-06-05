@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ChartOfAccountsCartegory;
 
 class ChartOfAccountsCartegoryController extends Controller
 {
@@ -13,7 +14,8 @@ class ChartOfAccountsCartegoryController extends Controller
      */
     public function index()
     {
-        //
+        $coacat = ChartOfAccountsCartegory::all();
+        return view('backoffice.coacat.index')->with('coacat',$coacat);
     }
 
     /**
@@ -23,7 +25,7 @@ class ChartOfAccountsCartegoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backoffice.coacat.index');
     }
 
     /**
@@ -34,7 +36,23 @@ class ChartOfAccountsCartegoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request,[
+            'coa_cat_code' => 'required',
+            'coa_cat_name' => 'required',
+            'coa_min' => 'required',
+            'coa_max' => 'required',
+         ]);
+
+         $coacat = array(
+            'coa_cat_code' => $request->coa_cat_code,
+            'coa_cat_name' => $request->coa_cat_name,
+            'coa_min' => $request->coa_min,
+            'coa_max' => $request->coa_max,
+        );
+        //dd($coacat);
+        ChartOfAccountsCartegory::create($coacat);
+        return back();
     }
 
     /**
@@ -45,7 +63,8 @@ class ChartOfAccountsCartegoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $coacat = ChartOfAccountsCartegory::findOrFail($id);
+        return $coacat;
     }
 
     /**
@@ -68,7 +87,21 @@ class ChartOfAccountsCartegoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'coa_cat_code' => 'required',
+            'coa_cat_name' => 'required',
+            'coa_min' => 'required',
+            'coa_max' => 'required',
+         ]);
+
+        $coa = ChartOfAccountsCartegory::find($id);
+        $coa->coa_cat_code = $request ->get ('coa_cat_code');
+        $coa->coa_cat_name = $request ->get ('coa_cat_name');
+        $coa->coa_min = $request ->get ('coa_min');
+        $coa->coa_max = $request ->get ('coa_max');
+
+        $coa->save();
+        return redirect('/coacat');
     }
 
     /**
@@ -79,6 +112,8 @@ class ChartOfAccountsCartegoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $coacat = ChartOfAccountsCartegory::find($id);
+        $coacat->delete();
+        return redirect('/coacat');
     }
 }

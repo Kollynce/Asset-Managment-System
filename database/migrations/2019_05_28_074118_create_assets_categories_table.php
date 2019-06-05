@@ -16,9 +16,10 @@ class CreateAssetsCategoriesTable extends Migration
         Schema::create('assets_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Asset_category_name');
+            $table->string('Asset_category_type');
             $table->integer('appreaciate_id');
             $table->integer('depreciation_id');
-            $table->string('status');
+            $table->string('status')->default('inactive');
             $table->timestamps();
         });
     }
