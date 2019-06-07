@@ -92,7 +92,9 @@ $('body').on('click', '.coa-edit', function(e){
             $('#coa-cat-id').val(response.coa_cat_id);
             $('#coa-code').val(response.coa_code);
             $('#coa-name').val(response.coa_name);
-            $('#last-modified').val(response.last_modified_by);
+            $('#coa-x-name').val(response.coa_x_name);
+            $('#chart_of_accounts_cartegory_id').text(response.chart_of_accounts_cartegory_id);
+            
         }
     });
 

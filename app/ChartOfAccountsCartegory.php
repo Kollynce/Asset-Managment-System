@@ -10,7 +10,7 @@ class ChartOfAccountsCartegory extends Model
     protected $guarded = [];
 
 
-    public function chart_of_accounts()
+    public function chart_of_account()
     {
         return $this->hasMany(ChartOfAccount::class);
     }

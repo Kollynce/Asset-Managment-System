@@ -20,10 +20,7 @@ class CreateChartOfAccountsTable extends Migration
             $table->string('coa_name');
             $table->timestamps();
 
-            $table->foreign('chart_of_accounts_cartegory_id')
-                ->references('id')
-                ->on('chart_of_accounts_cartegories')
-                ->onDelete('CASCADE');
+            $table->index('chart_of_accounts_cartegory_id');
         });
     }
 

@@ -9,8 +9,12 @@
                 @csrf
                 @method('PATCH')
                     <div class="modal-body">
+                            <div class="form-group">
+                                    <label for=""><b>ID : </b></label>
+                                    <label id="chart_of_accounts_cartegory_id"></label>
+                                </div>
                         <div class="form-group">
-                            <input type="text" name="coa_cat_id" class="form-control" id="coa-cat-id">
+                            <input type="text" name="coa_x_name" class="form-control" value="{{$coas->coa_cat_name}}" id="coa-x-name">
                         </div>
                         <div class="form-group">
                             <input type="text" name="coa_code" class="form-control" id="coa-code">

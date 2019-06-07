@@ -11,6 +11,6 @@ class ChartOfAccount extends Model
 
      public function chart_of_accounts_cartegory()
      {
-         return $this->belongsTo(ChartOfAccountsCartegory::class);
+         return $this->belongsTo(ChartOfAccountsCartegory::class, 'chart_of_accounts_cartegory_id');
      }
 }

@@ -11,11 +11,13 @@
                         <div class="form-group">
                             {{-- <input type="text" name="coa_code" class="form-control" placeholder="Enter COA Code" id=""> --}}
 
-                            <select class="form-control" name="coa_cat_name" id="">
-                                @foreach ($coa as $coas)
-                                <option value="{{$coas->coa_cat_name}}">{{$coas->coa_cat_name}}</option>
+                            <select class="form-control" name="chart_of_accounts_cartegory_id" id="">
+                                @foreach ($coacat as $coas)
+                                <option value="{{$coas->id}}">{{$coas->coa_cat_name}}</option>
                                 @endforeach
                             </select>
+
+                            <input type="hidden" name="coa_x_name" value="{{$coas->coa_cat_name}}" id="">
                         </div>
                         <div class="form-group">
                             <input type="text" name="coa_code" class="form-control" placeholder="Enter COA Code" id="">
